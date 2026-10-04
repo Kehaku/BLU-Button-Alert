@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:layoutDirection="locale"
+    android:textDirection="locale">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textColor="@color/navy"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/subtitle"
+            android:textColor="@color/muted"
+            android:textSize="17sp" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:layout_marginTop="16dp"
+            android:text="@string/language_heading" />
+
+        <Spinner
+            android:id="@+id/languageSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/language_help"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/status_background"
+            android:gravity="center_vertical"
+            android:minHeight="72dp"
+            android:text="@string/status_not_configured"
+            android:textColor="@color/ink"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/onboardingCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/status_background"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/onboarding_title"
+                android:textColor="@color/navy"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/onboarding_intro"
+                android:textColor="@color/muted"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/onboardingStatusText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="3dp"
+                android:textColor="@color/ink"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/onboardingHelpText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:textColor="@color/muted"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/onboardingActionButton"
+                style="@style/SecondaryButton"
+                android:text="@string/onboarding_continue" />
+        </LinearLayout>
+
+        <TextView style="@style/SectionTitle" android:text="ntfy Alarm" />
+        <EditText android:id="@+id/ntfyServerField" style="@style/PhoneField" android:hint="https://ntfy.sh" android:inputType="textUri" />
+        <EditText android:id="@+id/ntfyTopicField" style="@style/PhoneField" android:hint="Dein geheimes ntfy Topic" android:inputType="textNoSuggestions" />
+        <TextView style="@style/PhoneLabel" android:text="Alarmtitel" android:textStyle="bold" />
+        <EditText android:id="@+id/ntfyMessageField" style="@style/PhoneField" android:hint="z. B. Baby-Alarm, Hilfe benötigt, Notfall" android:inputType="text" />
+        <Button android:id="@+id/testNtfyButton" style="@style/SecondaryButton" android:text="Testalarm senden" />
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Priorität 5 (Max) wird automatisch verwendet. Einstellungen bleiben lokal auf diesem Handy." android:textColor="@color/muted" android:textSize="14sp" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:visibility="gone"
+            android:text="@string/caregiver_heading" />
+
+        <TextView
+            style="@style/PhoneLabel"
+            android:visibility="gone"
+            android:text="@string/panel_phone_heading"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/PhoneLabel"
+            android:visibility="gone"
+            android:text="@string/button_1_phone" />
+
+        <EditText
+            android:id="@+id/button1PhoneField"
+            android:visibility="gone"
+            style="@style/PhoneField"
+            android:autofillHints="phone"
+            android:hint="@string/optional_phone_hint" />
+
+        <CheckBox
+            android:id="@+id/useFirstForAllCheckBox"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:minHeight="48dp"
+            android:text="@string/use_first_for_all"
+            android:textColor="@color/ink"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/additionalPhoneFields"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/PhoneLabel"
+                android:visibility="gone"
+            android:text="@string/button_2_phone" />
+
+            <EditText
+                android:id="@+id/button2PhoneField"
+            android:visibility="gone"
+                style="@style/PhoneField"
+                android:autofillHints="phone"
+                android:hint="@string/optional_phone_hint" />
+
+            <TextView
+                style="@style/PhoneLabel"
+                android:visibility="gone"
+            android:text="@string/button_3_phone" />
+
+            <EditText
+                android:id="@+id/button3PhoneField"
+            android:visibility="gone"
+                style="@style/PhoneField"
+                android:autofillHints="phone"
+                android:hint="@string/optional_phone_hint" />
+
+            <TextView
+                style="@style/PhoneLabel"
+                android:visibility="gone"
+            android:text="@string/button_4_phone" />
+
+            <EditText
+                android:id="@+id/button4PhoneField"
+            android:visibility="gone"
+                style="@style/PhoneField"
+                android:autofillHints="phone"
+                android:hint="@string/optional_phone_hint" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/PhoneLabel"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:text="@string/tough_phone"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/toughPhoneField"
+            android:visibility="gone"
+            style="@style/PhoneField"
+            android:autofillHints="phone"
+            android:hint="@string/optional_phone_hint" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:visibility="gone"
+            android:text="@string/phone_help"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/remote_heading" />
+
+        <TextView
+            style="@style/PhoneLabel"
+            android:visibility="gone"
+            android:text="@string/panel_remote_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/remoteText"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remote_slot_not_selected"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            style="@style/PhoneLabel"
+            android:layout_marginTop="14dp"
+            android:text="@string/tough_remote_label"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/toughRemoteText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/remote_slot_not_selected"
+            android:textColor="@color/ink"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/findHelpText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/find_remote_help"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/trigger_heading" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/press_label"
+                android:textColor="@color/muted" />
+
+            <Spinner
+                android:id="@+id/pressSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="52dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/press_help"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/startButton"
+            style="@style/PrimaryButton"
+            android:text="@string/start_monitoring" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/auto_saved_note"
+            android:textColor="@color/muted"
+            android:textSize="14sp" />
+
+        <TextView
+            style="@style/SectionTitle"
+            android:text="@string/diagnostics_heading" />
+
+        <TextView
+            android:id="@+id/lastActivityText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/no_activity"
+            android:textColor="@color/muted"
+            android:textIsSelectable="true"
+            android:textSize="15sp" />
+    </LinearLayout>
+</ScrollView>
